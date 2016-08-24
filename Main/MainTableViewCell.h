@@ -12,6 +12,7 @@
 @property(strong) IBOutlet UILabel* housetitle;
 @property(strong) IBOutlet UILabel* houseinfo;
 @property(strong) IBOutlet UITextField* textfieldtax;
+@property(strong) IBOutlet UILabel* taxunit;
 @property(strong) IBOutlet UITextField* textfield;
 @property(strong) IBOutlet UISegmentedControl* segmentcontroll;
 

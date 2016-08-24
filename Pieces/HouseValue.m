@@ -139,4 +139,32 @@
     return NO;
 }
 
++(BOOL)getEnableFiled:(HOUSEVALUETYPE)type {
+    if (type == HOUSEVALUETYPE_DEED_TAX || type == HOUSEVALUETYPE_PERSONAL_TAX ||  type == HOUSEVALUETYPE_SALE_TAX|| type == HOUSEVALUETYPE_AGENCY || type == HOUSEVALUETYPE_FEESFORASSIGNMENT || type == HOUSEVALUETYPE_RATIO_OF_LOAN || type == HOUSEVALUETYPE_DOWN_PAYMENT || type == HOUSEVALUETYPE_TOTAL_PRICE) {
+        return YES;
+    }
+    return NO;
+}
+
++(NSString*)getDefaltTax:(HOUSEVALUETYPE)type {
+    switch (type) {
+        case HOUSEVALUETYPE_DEED_TAX:
+            return @"3";
+        case HOUSEVALUETYPE_PERSONAL_TAX:
+            return @"20";
+        case HOUSEVALUETYPE_SALE_TAX:
+            return @"0";
+        case HOUSEVALUETYPE_AGENCY:
+            return @"2.7";
+        case HOUSEVALUETYPE_FEESFORASSIGNMENT:
+            return @"0.00156";
+        case HOUSEVALUETYPE_RATIO_OF_LOAN:
+            return @"70";
+       
+        default:
+            break;
+    }
+    return @"";
+}
+
 @end

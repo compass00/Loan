@@ -32,4 +32,7 @@ typedef NS_ENUM(NSInteger, HOUSEVALUETYPE) {
 +(NSString*)getInformation:(HOUSEVALUETYPE)type;
 +(BOOL)getShowSegment:(HOUSEVALUETYPE)type;
 +(BOOL)getShowTaxFiled:(HOUSEVALUETYPE)type;
++(BOOL)getEnableFiled:(HOUSEVALUETYPE)type;
++(NSString*)getDefaltTax:(HOUSEVALUETYPE)type;
+
 @end

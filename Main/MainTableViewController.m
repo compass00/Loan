@@ -25,6 +25,7 @@
     self.title = NSLocalizedString(@"STRING_APP_TITLE", @"STRING_APP_TITLE");
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.allowsSelection = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +78,9 @@
   
             }
             cell.segmentcontroll.hidden = !showSegment;
+            cell.textfield.enabled = ![HouseValue getEnableFiled:(HOUSEVALUETYPE)indexPath.row];
+            cell.textfieldtax.text = [HouseValue getDefaltTax:(HOUSEVALUETYPE)indexPath.row];
+            cell.taxunit.hidden = cell.textfieldtax.hidden;
 
         }
         

@@ -51,12 +51,21 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="65" id="eqp-m6-Nwf"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlS-rz-0Xn">
+                        <rect key="frame" x="228" y="19" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="tlS-rz-0Xn" firstAttribute="leading" secondItem="eaP-sf-nbD" secondAttribute="trailing" id="40S-Bc-ppw"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Fnu-aQ-Jm1" secondAttribute="bottom" constant="5" id="5NW-lb-hEF"/>
+                    <constraint firstItem="tlS-rz-0Xn" firstAttribute="baseline" secondItem="eaP-sf-nbD" secondAttribute="baseline" id="C7Z-hS-Mh3"/>
                     <constraint firstItem="eaP-sf-nbD" firstAttribute="baseline" secondItem="3bC-yY-HO5" secondAttribute="baseline" id="E5j-lB-XmS"/>
                     <constraint firstItem="gAS-eE-Ovd" firstAttribute="leading" secondItem="eaP-sf-nbD" secondAttribute="trailing" constant="-2" id="TOi-XX-7Ie"/>
                     <constraint firstItem="pUo-aE-0XW" firstAttribute="leading" secondItem="l5b-qI-DM6" secondAttribute="leadingMargin" constant="22" id="Vc9-o6-97Y"/>
@@ -76,6 +85,7 @@
                 <outlet property="houseinfo" destination="Fnu-aQ-Jm1" id="aeH-Sq-PyJ"/>
                 <outlet property="housetitle" destination="pUo-aE-0XW" id="YVZ-Eu-lRQ"/>
                 <outlet property="segmentcontroll" destination="gAS-eE-Ovd" id="xoA-45-4x9"/>
+                <outlet property="taxunit" destination="tlS-rz-0Xn" id="OZA-IT-x0O"/>
                 <outlet property="textfield" destination="3bC-yY-HO5" id="wch-Yl-6DB"/>
                 <outlet property="textfieldtax" destination="eaP-sf-nbD" id="lEn-yr-RsQ"/>
             </connections>
