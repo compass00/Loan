@@ -9,17 +9,27 @@
 #import "MainTableViewController.h"
 #import "MainTableViewCell.h"
 #import "MainSubmitViewCell.h"
+#import "HouseStrings.h"
 #import "HouseValue.h"
+#import "HouseDelegate.h"
+
 #define COUNT 17
 @interface MainTableViewController ()
-
+@property (strong)HouseValue* houseValue;
+@property (strong)HouseDelegate* houseDelegate;
 @end
 
 @implementation MainTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (_houseValue == nil) {
+        _houseValue = [[HouseValue alloc] init];
+    }
     
+    if (_houseDelegate == nil) {
+        _houseDelegate = [[HouseDelegate alloc] init];
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     self.title = NSLocalizedString(@"STRING_APP_TITLE", @"STRING_APP_TITLE");
@@ -63,11 +73,13 @@
         MainTableViewCell *cell = [MainTableViewCell loadfromNib];
         // Configure the cell...
         if (cell != nil) {
-            cell.housetitle.text = [HouseValue getTitle:(HOUSEVALUETYPE)indexPath.row];
-            cell.houseinfo.text = [HouseValue getInformation:(HOUSEVALUETYPE)indexPath.row];
-            BOOL showSegment = [HouseValue getShowSegment:(HOUSEVALUETYPE)indexPath.row];
+            cell.housetitle.text = [HouseStrings getTitle:(HOUSEVALUETYPE)indexPath.row];
+            cell.houseinfo.text = [HouseStrings getInformation:(HOUSEVALUETYPE)indexPath.row];
+            BOOL showSegment = [HouseStrings getShowSegment:(HOUSEVALUETYPE)indexPath.row];
             cell.textfield.hidden = showSegment;
-            cell.textfieldtax.hidden = ![HouseValue getShowTaxFiled:(HOUSEVALUETYPE)indexPath.row];
+            cell.textfieldtax.hidden = ![HouseStrings getShowTaxFiled:(HOUSEVALUETYPE)indexPath.row];
+            cell.textfield.delegate = _houseDelegate;
+            cell.textfieldtax.delegate = _houseDelegate;
             if (indexPath.row == HOUSEVALUETYPE_HOME_VALUE) {
                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_HOUSE", nil) forSegmentAtIndex:0];
                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_BISINESS", nil) forSegmentAtIndex:1];
@@ -78,10 +90,14 @@
   
             }
             cell.segmentcontroll.hidden = !showSegment;
-            cell.textfield.enabled = ![HouseValue getEnableFiled:(HOUSEVALUETYPE)indexPath.row];
-            cell.textfieldtax.text = [HouseValue getDefaltTax:(HOUSEVALUETYPE)indexPath.row];
+            cell.textfield.enabled = ![HouseStrings getEnableFiled:(HOUSEVALUETYPE)indexPath.row];
+            cell.textfieldtax.text = [HouseStrings getDefaltTax:(HOUSEVALUETYPE)indexPath.row];
             cell.taxunit.hidden = cell.textfieldtax.hidden;
 
+            cell.textfield.row = indexPath.row;
+            cell.textfield.index = 1;
+            cell.textfieldtax.row = indexPath.row;
+            cell.textfieldtax.index = 0;
         }
         
         return cell;

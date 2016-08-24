@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HouseTextField.h"
 @interface MainTableViewCell : UITableViewCell
 @property(strong) IBOutlet UILabel* housetitle;
 @property(strong) IBOutlet UILabel* houseinfo;
-@property(strong) IBOutlet UITextField* textfieldtax;
+@property(strong) IBOutlet HouseTextField* textfieldtax;
 @property(strong) IBOutlet UILabel* taxunit;
-@property(strong) IBOutlet UITextField* textfield;
+@property(strong) IBOutlet HouseTextField* textfield;
 @property(strong) IBOutlet UISegmentedControl* segmentcontroll;
 
 +(instancetype)loadfromNib;

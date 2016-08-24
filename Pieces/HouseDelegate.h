@@ -1,5 +1,5 @@
 //
-//  HouseValue.h
+//  HouseDelegate.h
 //  Loan
 //
 //  Created by JiaLi on 16/8/24.
@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface HouseValue : NSObject
-@property(strong) NSMutableDictionary* valuedic;
+#import <UIKit/UIKit.h>
+@interface HouseDelegate : NSObject<UITextFieldDelegate>
 
 @end
