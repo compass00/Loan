@@ -66,7 +66,7 @@
             cell.houseinfo.text = [HouseValue getInformation:(HOUSEVALUETYPE)indexPath.row];
             BOOL showSegment = [HouseValue getShowSegment:(HOUSEVALUETYPE)indexPath.row];
             cell.textfield.hidden = showSegment;
-            
+            cell.textfieldtax.hidden = ![HouseValue getShowTaxFiled:(HOUSEVALUETYPE)indexPath.row];
             if (indexPath.row == HOUSEVALUETYPE_HOME_VALUE) {
                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_HOUSE", nil) forSegmentAtIndex:0];
                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_BISINESS", nil) forSegmentAtIndex:1];

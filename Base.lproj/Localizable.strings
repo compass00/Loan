@@ -28,10 +28,10 @@
 "STRING_HOUSE_TWOYEARS" = "是否满2年";
 "STRING_HOUSE_SALE_TAX" = "营业税";
 "STRING_HOUSE_AGENCY" = "链家";
-"STRING_HOUSE_FEESFORASSIGNMENT" = "土地出让金（万元/平）";
+"STRING_HOUSE_FEESFORASSIGNMENT" = "土地出让金";
 "STRING_HOUSE_RATIO_OF_LOAN" = "货款比例";
-"STRING_HOUSE_DOWN_PAYMENT" = "首付（万元）：";
-"STRING_HOUSE_TOTAL_PRICE" = "总成交价：（万元）";
+"STRING_HOUSE_DOWN_PAYMENT" = "首付";
+"STRING_HOUSE_TOTAL_PRICE" = "总成交价";
 
 
 "STRING_AREA_UNIT" = "平米";
@@ -46,7 +46,7 @@
 "STRING_HOUSE_TWOYEARS_INFO" = "如果前边是满足5唯一，这里置灰色，为满2年状态";
 "STRING_HOUSE_SALE_TAX_INFO" = "满足2年：住宅0%， 商住5.6%X差额（网签价-原值)*5.6%。 不满足2年：网签价*5.6%（默认满足2年）";
 "STRING_HOUSE_AGENCY_INFO" = "中介费";
-"STRING_HOUSE_FEESFORASSIGNMENT_INFO" = "（15.6元/平*面积,仅适用于公房，其它性质为灰色状态，值为0）";
+"STRING_HOUSE_FEESFORASSIGNMENT_INFO" = "单位：（万元/平）（15.6元/平*面积,仅适用于公房，其它性质为灰色状态，值为0）";
 "STRING_HOUSE_RATIO_OF_LOAN_INFO" = "（首套：70%， 二套50%）";
-"STRING_HOUSE_DOWN_PAYMENT_INFO" = "成交价+契税+营业税+个税+中介费+土地出让金-贷款";
-"STRING_HOUSE_TOTAL_PRICE_INFO" = " 成交价+契税+营业税+个税+中介费+土地出让金";
+"STRING_HOUSE_DOWN_PAYMENT_INFO" = "单位：（万元）成交价+契税+营业税+个税+中介费+土地出让金-贷款";
+"STRING_HOUSE_TOTAL_PRICE_INFO" = "单位：（万元） 成交价+契税+营业税+个税+中介费+土地出让金";

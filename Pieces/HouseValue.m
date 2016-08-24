@@ -132,5 +132,11 @@
     return NO;
 }
 
++(BOOL)getShowTaxFiled:(HOUSEVALUETYPE)type {
+    if (type == HOUSEVALUETYPE_DEED_TAX || type == HOUSEVALUETYPE_PERSONAL_TAX ||  type == HOUSEVALUETYPE_SALE_TAX|| type == HOUSEVALUETYPE_AGENCY || type == HOUSEVALUETYPE_FEESFORASSIGNMENT || type == HOUSEVALUETYPE_RATIO_OF_LOAN) {
+        return YES;
+    }
+    return NO;
+}
 
 @end

@@ -31,4 +31,5 @@ typedef NS_ENUM(NSInteger, HOUSEVALUETYPE) {
 +(NSString*)getTitle:(HOUSEVALUETYPE)type;
 +(NSString*)getInformation:(HOUSEVALUETYPE)type;
 +(BOOL)getShowSegment:(HOUSEVALUETYPE)type;
++(BOOL)getShowTaxFiled:(HOUSEVALUETYPE)type;
 @end
