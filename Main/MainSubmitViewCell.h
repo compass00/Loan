@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainSubmitViewCell : UITableViewCell
-@property(strong) IBOutlet UILabel* housetitle;
+@property(strong) IBOutlet UIButton* submitbuttom;
 +(instancetype)loadfromNib;
 
 @end

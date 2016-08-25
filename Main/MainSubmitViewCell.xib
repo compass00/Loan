@@ -14,20 +14,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfb-fc-ffp">
-                        <rect key="frame" x="78" y="8" width="157" height="49"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY0-BC-fT0">
+                        <rect key="frame" x="8" y="8" width="308" height="57"/>
+                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="wfb-fc-ffp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Bw-J4-LHm"/>
-                    <constraint firstItem="wfb-fc-ffp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1Fb-KM-Qup"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="housetitle" destination="wfb-fc-ffp" id="13p-Yj-bPA"/>
+                <outlet property="submitbuttom" destination="cY0-BC-fT0" id="0YZ-fQ-CYb"/>
             </connections>
             <point key="canvasLocation" x="242" y="444"/>
         </tableViewCell>

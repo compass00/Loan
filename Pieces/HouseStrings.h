@@ -28,11 +28,14 @@ typedef NS_ENUM(NSInteger, HOUSEVALUETYPE) {
 
 @interface HouseStrings : NSObject
 
-+(NSString*)getTitle:(HOUSEVALUETYPE)type;
-+(NSString*)getInformation:(HOUSEVALUETYPE)type;
-+(BOOL)getShowSegment:(HOUSEVALUETYPE)type;
-+(BOOL)getShowTaxFiled:(HOUSEVALUETYPE)type;
-+(BOOL)getEnableFiled:(HOUSEVALUETYPE)type;
-+(NSString*)getDefaltTax:(HOUSEVALUETYPE)type;
++ (NSString*)getTitle:(HOUSEVALUETYPE)type;
+
++ (NSString*)getInformation:(HOUSEVALUETYPE)type;
+
++ (BOOL)getShowSegment:(HOUSEVALUETYPE)type;
+
++ (BOOL)getShowTaxFiled:(HOUSEVALUETYPE)type;
+
++ (BOOL)getEnableFiled:(HOUSEVALUETYPE)type;
 
 @end

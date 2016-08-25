@@ -10,7 +10,6 @@
 #import "MainTableViewCell.h"
 #import "MainSubmitViewCell.h"
 #import "HouseStrings.h"
-#import "HouseValue.h"
 #import "HouseDelegate.h"
 
 #define COUNT 17
@@ -23,12 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (_houseValue == nil) {
-        _houseValue = [[HouseValue alloc] init];
-    }
     
     if (_houseDelegate == nil) {
         _houseDelegate = [[HouseDelegate alloc] init];
+        _houseDelegate.calculationdelegate = (id)self;
     }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -64,7 +61,8 @@
         MainSubmitViewCell *cell = [MainSubmitViewCell loadfromNib];
         // Configure the cell...
         if (cell != nil) {
-            cell.housetitle.text = NSLocalizedString(@"STRING_SUBMIT", nil);
+            [cell.submitbuttom setTitle:NSLocalizedString(@"STRING_SUBMIT", nil) forState:UIControlStateNormal];
+            [cell.submitbuttom addTarget:_houseValue action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
         }
         
         return cell;
@@ -85,13 +83,17 @@
                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_BISINESS", nil) forSegmentAtIndex:1];
                 [cell.segmentcontroll insertSegmentWithTitle:NSLocalizedString(@"STRING_PUBLIC", nil) atIndex:2 animated:NO];
             } else {
-                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_YES", nil) forSegmentAtIndex:0];
+                [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_YES", nil) forSegmentAtIndex:0];
                 [cell.segmentcontroll setTitle:NSLocalizedString(@"STRING_NO", nil) forSegmentAtIndex:1];
-  
+
             }
+            [cell.segmentcontroll addTarget:_houseValue action:@selector(changeSegment:) forControlEvents:UIControlEventValueChanged];
+
+            cell.segmentcontroll.tag = indexPath.row;
             cell.segmentcontroll.hidden = !showSegment;
             cell.textfield.enabled = ![HouseStrings getEnableFiled:(HOUSEVALUETYPE)indexPath.row];
-            cell.textfieldtax.text = [HouseStrings getDefaltTax:(HOUSEVALUETYPE)indexPath.row];
+            cell.textfieldtax.text = [_houseDelegate getDefaltTax:(HOUSEVALUETYPE)indexPath.row position:0];
+            cell.textfield.text = [_houseDelegate getDefaltTax:(HOUSEVALUETYPE)indexPath.row position:1];
             cell.taxunit.hidden = cell.textfieldtax.hidden;
 
             cell.textfield.row = indexPath.row;
@@ -149,5 +151,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)didCalculate {
+    [self.tableView reloadData];
+}
 
 @end

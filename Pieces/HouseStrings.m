@@ -9,7 +9,42 @@
 #import "HouseStrings.h"
 
 @implementation HouseStrings
+
++ (NSArray *)getHouseStringsArray
+{
+    static NSArray *sharedInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        sharedInstance = [[NSArray alloc] initWithObjects:NSLocalizedString(@"STRING_AREA", nil),
+                          NSLocalizedString(@"STRING_TRANSACTION_PRICE", nil),
+                          NSLocalizedString(@"STRING_NET_PRICE", nil),
+                          NSLocalizedString(@"STRING_HOUSE_NATURE", nil),
+                          NSLocalizedString(@"STRING_HOUSE_ORIGINAL_VALUE", nil),
+                          NSLocalizedString(@"STRING_HOUSE_FIRST", nil),
+                          NSLocalizedString(@"STRING_HOUSE_DEED_TEXT", nil),
+                          NSLocalizedString(@"STRING_HOUSE_FIVEYEARS_ONLYONE", nil),
+                          NSLocalizedString(@"STRING_HOUSE_PERSONAL_TAX", nil),
+                          NSLocalizedString(@"STRING_HOUSE_TWOYEARS", nil),
+                          NSLocalizedString(@"STRING_HOUSE_SALE_TAX", nil),
+                          NSLocalizedString(@"STRING_HOUSE_AGENCY", nil),
+                          NSLocalizedString(@"STRING_HOUSE_FEESFORASSIGNMENT", nil),
+                          NSLocalizedString(@"STRING_HOUSE_RATIO_OF_LOAN", nil),
+                          NSLocalizedString(@"STRING_HOUSE_DOWN_PAYMENT", nil),
+                          NSLocalizedString(@"STRING_HOUSE_TOTAL_PRICE", nil),
+                          nil];
+    });
+    return sharedInstance;
+}
+
+
 +(NSString*)getTitle:(HOUSEVALUETYPE)type {
+    NSArray* stArray = [HouseStrings getHouseStringsArray];
+    if (type < [stArray count]) {
+        return stArray[type];
+    }
+    return @"";
+    
+    /*
     switch (type) {
         // 0
         case  HOUSEVALUETYPE_AREA:
@@ -63,12 +98,11 @@
 
         default:
             return @"";
-    }
+    }*/
 }
 
 +(NSString*)getInformation:(HOUSEVALUETYPE)type {
     switch (type) {
-            
             // 0
         case  HOUSEVALUETYPE_AREA:
             return NSLocalizedString(@"STRING_AREA_UNIT", nil);
@@ -145,26 +179,4 @@
     }
     return NO;
 }
-
-+(NSString*)getDefaltTax:(HOUSEVALUETYPE)type {
-    switch (type) {
-        case HOUSEVALUETYPE_DEED_TAX:
-            return @"3";
-        case HOUSEVALUETYPE_PERSONAL_TAX:
-            return @"20";
-        case HOUSEVALUETYPE_SALE_TAX:
-            return @"0";
-        case HOUSEVALUETYPE_AGENCY:
-            return @"2.7";
-        case HOUSEVALUETYPE_FEESFORASSIGNMENT:
-            return @"0.00156";
-        case HOUSEVALUETYPE_RATIO_OF_LOAN:
-            return @"70";
-       
-        default:
-            break;
-    }
-    return @"";
-}
-
 @end
